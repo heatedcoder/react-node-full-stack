@@ -1,0 +1,87 @@
+let vs var
+1. There is function scope and block scope.
+2. Block scope is if conditions, for loops.
+3. variables declared with var continued to exist even after block scope which does not make sense.
+4. So, ES6 has new keywors let. With let keyword, scope is defined within parenthesis only.
+
+if(true) {
+    let a = 10;
+    var b = 11;
+}
+console.log(a); // error
+console.log(b); // prints 11
+
+=================================================================
+CONST keyword
+1. if variable is declared using const keyword, you can't change its value. It will give error.
+2. If object is declared using const keyword, you can change its properties 
+    but you cannot change direct variable assignment.
+
+    const obj = {
+        name: 'John'
+    }
+
+    obj.name = 'Mary'; // no error
+    obj = {
+        feedName: 'scamp' // it will give error with const keyword
+    }
+3. Constants are used when importing variables from another library.
+    ex - const fs = require('fs');
+4. functions are also used to define with const keyword so that it cannot change at other location.
+const func = function() {
+
+}
+=================================================================
+Destructuring
+let X = {
+    pi: pi,
+    square: square,
+    get: get
+}
+
+While exporting this, I can omit right side.
+const X = { // it is same as above
+    pi,
+    square,
+    get
+}
+
+const square = X.square;       OR 
+const {square} = x;           //destructed syntax
+
+const {pi, square, get} = x;  //destructed syntax
+    is equivalent to
+const pi     = x.pi;
+const square = x.square;
+const get    = x.get;
+====================================================================
+IMPORT statement
+1. import statement is not yet identified by Javascript compiler but it can be compiled using tool Babel.
+
+
+const fs = require('fs');
+const React, {Component} = require('react');
+    
+    is equivalent to
+
+import fs from 'fs';
+import React, {Component} from 'react';
+====================================================================
+CLASS in Javascript
+1. We can use class syntax to create components in React
+
+class Footer extends Component {
+    constructor(prop) {
+        super(props);
+        //....
+    }
+}
+=====================================================================
+1. BABEL is used to convert JSX extension code (Javascript XML) to what react understands.
+2. It is also used to convert some of the features of modern javascript to native which some browsers dont understand.
+
+======================================================================
+ESLINT
+1. Linting is the process of running a program that will analyse code for potential errors.
+2. ESLint is an open source JavaScript linting utility. Code linting is a type of static analysis that is frequently used to find problematic patterns or code that doesn't adhere to certain style guidelines.
+3. 
